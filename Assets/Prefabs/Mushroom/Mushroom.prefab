@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -631940644, guid: 042c1b82e8ed70f478a17733f32b1579, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.6666666, y: 1.3333334}
@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3096200646457705025}
   - component: {fileID: 6932878012781166788}
-  - component: {fileID: 7218164971150070453}
   - component: {fileID: 4639727346814158575}
   m_Layer: 0
   m_Name: Mushroom
@@ -155,19 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   stopDistance: 1
-  laternToFollow: {fileID: 0}
---- !u!114 &7218164971150070453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5681147650539168293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5870b5df326c944be47554059006c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4639727346814158575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2100a9367231fa3469291bbd7e3b9274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laternToFollow: {fileID: 0}
+  powerUpLevel: 0
+  powerLevelSpeed: 0.5
