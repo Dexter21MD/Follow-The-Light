@@ -8,30 +8,20 @@ public class MushroomMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float stopDistance = 2f;
-    [SerializeField] GameObject laternToFollow;
-    // Start is called before the first frame update
 
-
-
-    // Update is called once per frame
-    void Update()
+    public void Move(Vector3 destinationPos)
     {
-        Move();
-    }
-
-    private void Move()
-    {
-        Vector2 moveDir = laternToFollow.transform.position - transform.position;
+        Vector3 moveDir = destinationPos - transform.position;
         moveDir = moveDir.normalized;
-        if (!IsClose())
+        if (!IsClose(destinationPos))
         {
             transform.Translate(moveDir * moveSpeed * Time.deltaTime);
         }
     }
 
-    private bool IsClose()
+    public bool IsClose(Vector3 destinationPos)
     {
-        float distance = Vector2.Distance(laternToFollow.transform.position,this.transform.position);
+        float distance = Vector3.Distance(destinationPos,this.transform.position);
         return distance <= stopDistance;
     }
 
