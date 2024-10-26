@@ -8,13 +8,21 @@ using UnityEngine;
 public class MushroomMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 2f;
-    [SerializeField] float stopDistance = 2f;
 
-    public float directionX {get;set;}
+    [SerializeField] float moveDistance = 2f;
 
-    //To avoid big numbers in serializeFields affected by Time.FixedDeltaTime 
-    const float VALUE_INSPECTOR_MULTIPLIER = 10.00f;
+    [SerializeField] float restDistance = 1f;
+
+    [SerializeField] GameObject laternToFollow;
+
     Rigidbody2D rb;
+    
+    //To avoid big numbers in serializeFields affected by Time.FixedDeltaTime 
+    
+    const float VALUE_INSPECTOR_MULTIPLIER = 10.00f;
+    bool isMoving;
+    bool isResting;
+    float directionX;
 
     private void Awake() 
     {
@@ -22,26 +30,59 @@ public class MushroomMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(Vector2 destination)
+    private void Update() 
+    {
+        isMoving  = IsClose(laternToFollow.transform.position,moveDistance);
+        isResting = IsClose(laternToFollow.transform.position,restDistance);        
+    }
+
+    private void FixedUpdate() 
+    {
+        if (isResting)
+        {
+            ResetVelocity();
+        }
+        else if (isMoving)
+        {
+            Move(laternToFollow.transform.position);    
+        }
+        else
+        {
+            ResetVelocity();
+        }
+    }
+
+    private void Move(Vector2 destination)
     {
         Vector3 moveDir = destination - rb.position;
         moveDir = moveDir.normalized;
         directionX = Mathf.Sign(moveDir.x);
         rb.velocity = moveSpeed * Time.fixedDeltaTime * moveDir;
-        
     }
 
-    public void RestVelocity()
+    private void ResetVelocity()
     {
         rb.velocity = new Vector2(0,0);
     }
 
-    public bool IsClose(Vector3 destinationPos)
+    private bool IsClose(Vector3 destinationPos, float checkDistance)
     {
         float distance = Vector3.Distance(destinationPos,rb.position);
-        return distance <= stopDistance;
+        return distance <= checkDistance;
     }
 
+    public bool GetMoveStatus()
+    {
+        return isMoving;
+    }
 
+    public bool GetRestStatus()
+    {
+        return isResting;
+    }
 
+    public float GetDirectionX()
+    {
+        return directionX;
+    }
 }
