@@ -272,8 +272,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2456,73 +2456,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1467452983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5681147650539168293, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
-  m_PrefabInstance: {fileID: 6952463507387654141}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &1467452987
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467452983}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.009455681, y: -0.34986395}
-  m_Size: {x: 0.32979584, y: 0.7352377}
-  m_Direction: 0
---- !u!50 &1467452988
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467452983}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1550614292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,7 +2511,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3096200646457705025, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.43
+      value: -2.435
       objectReference: {fileID: 0}
     - target: {fileID: 3096200646457705025, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2617,10 +2550,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
-      propertyPath: moveSpeed
-      value: 255
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
       propertyPath: laternToFollow
       value: 
       objectReference: {fileID: 280092801}
@@ -2628,24 +2557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
-    - target: {fileID: 5851529882684163822, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6932878012781166788, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5681147650539168293, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1467452987}
-    - targetCorrespondingSourceObject: {fileID: 5681147650539168293, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1467452988}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
 --- !u!1001 &8065887064566787206
 PrefabInstance:
@@ -2665,11 +2580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9088787094520764203, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.232
       objectReference: {fileID: 0}
     - target: {fileID: 9088787094520764203, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.915
       objectReference: {fileID: 0}
     - target: {fileID: 9088787094520764203, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
       propertyPath: m_LocalPosition.z
