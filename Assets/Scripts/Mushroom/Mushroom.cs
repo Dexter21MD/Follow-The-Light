@@ -13,29 +13,38 @@ public class Mushroom : MonoBehaviour
     Animator animator;
 
     bool isMoving;
+
     void Awake()
     {
-        isMoving = false;
         mushroomMovement = GetComponent<MushroomMovement>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update() 
     {
         isMoving = !mushroomMovement.IsClose(laternToFollow.transform.position);
+
+        //TODO move it to different script
+        FlipSprite();
+        animator.SetBool("Moving",isMoving);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+
         if (isMoving)
         {
             mushroomMovement.Move(laternToFollow.transform.position);    
         }
         else
         {
+            mushroomMovement.RestVelocity();
             Rest();
         }
-        //TODO move it to different script
-        FlipSprite();
-        animator.SetBool("Moving",isMoving);
+        
+
     }
 
     private void FlipSprite()

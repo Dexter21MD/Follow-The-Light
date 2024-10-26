@@ -12,23 +12,36 @@ public class MushroomMovement : MonoBehaviour
 
     public float directionX {get;set;}
 
-    public void Move(Vector3 destinationPos)
+    //To avoid big numbers in serializeFields affected by Time.FixedDeltaTime 
+    const float VALUE_INSPECTOR_MULTIPLIER = 10.00f;
+    Rigidbody2D rb;
+
+    private void Awake() 
     {
-        Vector3 moveDir = destinationPos - transform.position;
+        moveSpeed *= VALUE_INSPECTOR_MULTIPLIER;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Move(Vector2 destination)
+    {
+        Vector3 moveDir = destination - rb.position;
         moveDir = moveDir.normalized;
         directionX = Mathf.Sign(moveDir.x);
-        Debug.Log(moveDir);
-        if (!IsClose(destinationPos))
-        {
-            transform.Translate(moveDir * moveSpeed * Time.deltaTime);
-        }
+        rb.velocity = moveSpeed * Time.fixedDeltaTime * moveDir;
+        
+    }
+
+    public void RestVelocity()
+    {
+        rb.velocity = new Vector2(0,0);
     }
 
     public bool IsClose(Vector3 destinationPos)
     {
-        float distance = Vector3.Distance(destinationPos,this.transform.position);
+        float distance = Vector3.Distance(destinationPos,rb.position);
         return distance <= stopDistance;
     }
+
 
 
 }
