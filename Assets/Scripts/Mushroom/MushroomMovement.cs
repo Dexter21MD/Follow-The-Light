@@ -13,7 +13,7 @@ public class MushroomMovement : MonoBehaviour
 
     [SerializeField] float restDistance = 1f;
 
-    [SerializeField] GameObject laternToFollow;
+    [SerializeField] GameObject lanternToFollow;
 
     Rigidbody2D rb;
     
@@ -32,8 +32,8 @@ public class MushroomMovement : MonoBehaviour
 
     private void Update() 
     {
-        isMoving  = IsClose(laternToFollow.transform.position,moveDistance);
-        isResting = IsClose(laternToFollow.transform.position,restDistance);        
+        isMoving  = IsClose(lanternToFollow.transform.position,moveDistance);
+        isResting = IsClose(lanternToFollow.transform.position,restDistance);        
     }
 
     private void FixedUpdate() 
@@ -44,7 +44,7 @@ public class MushroomMovement : MonoBehaviour
         }
         else if (isMoving)
         {
-            Move(laternToFollow.transform.position);    
+            Move(lanternToFollow.transform.position);    
         }
         else
         {

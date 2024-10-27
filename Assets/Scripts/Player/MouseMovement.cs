@@ -11,7 +11,7 @@ public class MouseMovement : MonoBehaviour
 
     const int MOUSE_Z_DISTANCE = -4;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         mouse = GetComponent<Mouse>();
         input = mouse.GetPlayerInput();
