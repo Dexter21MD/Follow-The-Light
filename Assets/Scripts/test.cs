@@ -1,32 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class test : MonoBehaviour
 {
+    Mouse mouse;
+    PlayerInput input;
 
-    private PlayerInput playerInput;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        playerInput = new PlayerInput();
-    }
+        mouse = GetComponent<Mouse>();
+        input = mouse.GetPlayerInput();
 
-    private void OnEnable() 
-    {
-        playerInput.Enable();    
-    }
-
-    private void OnDisable() 
-    {
-        playerInput.Disable();    
+        input.Mouse.MousePress.performed  += Testoweee;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(playerInput.Mouse.MousePress.ReadValue<float>()); na przycisk
-        //Vector2 testowe = playerInput.Mouse.MousePosition.ReadValue<Vector2>(); 
-        //Debug.Log(Camera.main.ScreenToWorldPoint(testowe)); NA POZYCJE
+    }
+
+    private void Testoweee(InputAction.CallbackContext context)
+    {
+
+        Debug.Log("hey");
+        Ray testRay = new Ray(this.transform.position, Vector3.forward * 50);
+        //Debug.DrawRay(this.transform.position,Vector3.forward);
+        RaycastHit2D test = Physics2D.GetRayIntersection(testRay,10000f);
+        if (test)
+        {
+            Debug.Log(test.collider.gameObject.tag);
+        } 
     }
 }

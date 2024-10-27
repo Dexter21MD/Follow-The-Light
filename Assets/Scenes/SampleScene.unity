@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 479647816}
   - component: {fileID: 479647818}
   - component: {fileID: 479647819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2494,7 +2494,7 @@ Transform:
   m_GameObject: {fileID: 1550614292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2631,9 +2631,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Latern
       objectReference: {fileID: 0}
-    - target: {fileID: 1976385242615460566, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
+    - target: {fileID: 1605887079837064306, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605887079837064306, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9088787094520764203, guid: 0d27f21d82c6468448bf9ef3deb381c2, type: 3}
       propertyPath: m_LocalPosition.x
