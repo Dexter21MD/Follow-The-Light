@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ObjectDetection : MonoBehaviour
+public class MouseInteraction : MonoBehaviour
 {
 
     Mouse mouse;

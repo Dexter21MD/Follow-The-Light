@@ -10,14 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 8423276617096241406}
   - component: {fileID: 475015709594726329}
-  - component: {fileID: 2762298461545405354}
+  - component: {fileID: 1173380328902787559}
+  - component: {fileID: 645254434076974997}
   m_Layer: 0
   m_Name: PlayerMouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8423276617096241406
 Transform:
   m_ObjectHideFlags: 0
@@ -45,7 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8add1675053684d8ef48faa648c2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2762298461545405354
+--- !u!114 &1173380328902787559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748484764922679971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f05d4291881e541a2cc922c567e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &645254434076974997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
