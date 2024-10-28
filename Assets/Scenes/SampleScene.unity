@@ -2569,6 +2569,55 @@ Transform:
   - {fileID: 901592113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821180236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2789842047783311951, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+  m_PrefabInstance: {fileID: 6952463507387654141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c23f44c65135c4ebb4dd078c82bf37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &1821180238 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 154100535755751756, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+  m_PrefabInstance: {fileID: 6952463507387654141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1821180239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+  m_PrefabInstance: {fileID: 6952463507387654141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2100a9367231fa3469291bbd7e3b9274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1821180240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6932878012781166788, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+  m_PrefabInstance: {fileID: 6952463507387654141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d7b31421d8e364b86e50ef45d0f3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1821180241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6511085118951272057, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+  m_PrefabInstance: {fileID: 6952463507387654141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bac35a0e5ed254088c4face1c61bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2676287496230604183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2620,6 +2669,10 @@ PrefabInstance:
     - target: {fileID: 1386667562035399368, guid: 62c5165c93e32404a88364a3d070e458, type: 3}
       propertyPath: m_Name
       value: Darkness
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634841815048998637, guid: 62c5165c93e32404a88364a3d070e458, type: 3}
+      propertyPath: damage
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2736,6 +2789,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listofComponents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listofComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 1821180240}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listofComponents.Array.data[1]
+      value: 
+      objectReference: {fileID: 1821180239}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listofComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: 1821180236}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listofComponents.Array.data[3]
+      value: 
+      objectReference: {fileID: 1821180241}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listofComponents.Array.data[4]
+      value: 
+      objectReference: {fileID: 1821180238}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfBehavioursToDisableOnDeath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfComponentsToDisableOnDeath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfBehavioursToDisableOnDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 1821180240}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfBehavioursToDisableOnDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 1821180236}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfBehavioursToDisableOnDeath.Array.data[2]
+      value: 
+      objectReference: {fileID: 1821180239}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfBehavioursToDisableOnDeath.Array.data[3]
+      value: 
+      objectReference: {fileID: 1821180241}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfComponentsToDisableOnDeath.Array.data[0]
+      value: 
+      objectReference: {fileID: 1821180240}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfComponentsToDisableOnDeath.Array.data[1]
+      value: 
+      objectReference: {fileID: 1821180236}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfComponentsToDisableOnDeath.Array.data[2]
+      value: 
+      objectReference: {fileID: 1821180239}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfComponentsToDisableOnDeath.Array.data[3]
+      value: 
+      objectReference: {fileID: 1821180241}
+    - target: {fileID: 4639727346814158575, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
+      propertyPath: listOfComponentsToDisableOnDeath.Array.data[4]
+      value: 
+      objectReference: {fileID: 1821180236}
     - target: {fileID: 5681147650539168293, guid: a67035f2f7b089c488ff95927faf0dbe, type: 3}
       propertyPath: m_Name
       value: Mushroom

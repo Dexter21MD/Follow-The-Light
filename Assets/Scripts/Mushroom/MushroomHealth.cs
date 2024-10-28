@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,17 +11,26 @@ public class MushroomHealth : MonoBehaviour
     bool isImmortal = false;
     // Start is called before the first frame update
 
-
+    public static event Action onMushroomDeath;
 
     public void DecreaseHealth(float damage)
     {
         if (!isImmortal)
         {
         health -= damage;
+        CheckIfDied();
         isImmortal = true;
         StartCoroutine(DamageCooldown());
         }
 
+    }
+    private void CheckIfDied()
+    {
+        if (health <= 0)
+        {
+            this.enabled = false;
+            onMushroomDeath?.Invoke();
+        }
     }
 
 

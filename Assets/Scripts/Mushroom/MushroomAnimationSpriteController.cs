@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MushroomAnimationSpriteController : MonoBehaviour
@@ -16,16 +17,26 @@ public class MushroomAnimationSpriteController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
     }
+    private void OnEnable() 
+    {
+        MushroomHealth.onMushroomDeath += SetDeathAnimation;
+        
+    }
+    private void OnDisable() 
+    {
+        MushroomHealth.onMushroomDeath -= SetDeathAnimation;
+        
+    }    
 
     // Update is called once per frame
     void Update()
     {
-        ControlAnimation(mushroom.mushroomMovement.GetRestStatus(),mushroom.mushroomMovement.GetMoveStatus());
+        ControlMovementAnimation(mushroom.mushroomMovement.GetRestStatus(),mushroom.mushroomMovement.GetMoveStatus());
         FlipSprite(mushroom.mushroomMovement.GetDirectionX());
     }
 
 
-    private void ControlAnimation(bool isResting, bool isMoving)
+    private void ControlMovementAnimation(bool isResting, bool isMoving)
     {
         if (isResting)
         {
@@ -45,5 +56,11 @@ public class MushroomAnimationSpriteController : MonoBehaviour
     private void FlipSprite(float direction)
     {
         spriteRenderer.flipX = direction == 1;
+    }
+
+    private void SetDeathAnimation()
+    {
+        animator.SetTrigger("Died");
+        this.enabled = false;
     }
 }
