@@ -22,6 +22,7 @@ public class MushroomMovement : MonoBehaviour
     const float VALUE_INSPECTOR_MULTIPLIER = 10.00f;
     bool isMoving;
     bool isResting;
+    bool inDanger;
     float directionX;
 
     private void Awake() 
@@ -33,7 +34,8 @@ public class MushroomMovement : MonoBehaviour
     private void Update() 
     {
         isMoving  = IsClose(lanternToFollow.transform.position,moveDistance);
-        isResting = IsClose(lanternToFollow.transform.position,restDistance);        
+        isResting = IsClose(lanternToFollow.transform.position,restDistance);      
+        inDanger = !isMoving && !isResting;  
     }
 
     private void FixedUpdate() 
@@ -75,7 +77,10 @@ public class MushroomMovement : MonoBehaviour
     {
         return isMoving;
     }
-
+    public bool GetInDangerStatus()
+    {
+        return inDanger;
+    }
     public bool GetRestStatus()
     {
         return isResting;
