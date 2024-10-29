@@ -11,13 +11,19 @@ public class MushroomHealth : MonoBehaviour
     bool isImmortal = false;
     // Start is called before the first frame update
 
+    public static event Action<float> onMushroomDamage;
     public static event Action onMushroomDeath;
 
+    private void Start() 
+    {
+        onMushroomDamage?.Invoke(health);
+    }
     public void DecreaseHealth(float damage)
     {
         if (!isImmortal)
         {
         health -= damage;
+        onMushroomDamage?.Invoke(health);
         CheckIfDied();
         isImmortal = true;
         StartCoroutine(DamageCooldown());
