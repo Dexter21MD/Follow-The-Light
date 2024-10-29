@@ -5,16 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
-    int sceneIndex;
+
     // Start is called before the first frame update
-    void Awake()
-    {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
+
 
     public void LoadGameLevel()
     {
-        SceneManager.LoadScene(sceneIndex + 1);
+        SceneManager.LoadScene(1);
+    }
+    public void LoadMenuLevel()
+    {
+        SceneManager.LoadScene(0);
+    }    
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
 }
