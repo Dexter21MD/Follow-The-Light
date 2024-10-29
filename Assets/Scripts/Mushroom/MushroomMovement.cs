@@ -23,19 +23,39 @@ public class MushroomMovement : MonoBehaviour
     bool isMoving;
     bool isResting;
     bool inDanger;
+    bool movementStop;
     float directionX;
 
     private void Awake() 
     {
         moveSpeed *= VALUE_INSPECTOR_MULTIPLIER;
         rb = GetComponent<Rigidbody2D>();
+        movementStop = false;
+    }
+
+    private void OnEnable() 
+    {
+        MushroomDetector.onMushroomEnterWinZone += TurnMovementOff;
+    }
+
+    private void OnDisable() 
+    {
+        MushroomDetector.onMushroomEnterWinZone -= TurnMovementOff;
     }
 
     private void Update() 
     {
+        if (!movementStop)
+        {
         isMoving  = IsClose(lanternToFollow.transform.position,moveDistance);
         isResting = IsClose(lanternToFollow.transform.position,restDistance);      
-        inDanger = !isMoving && !isResting;  
+        inDanger = !isMoving && !isResting;          
+        }
+        else
+        {
+            isResting = true;
+        }
+
     }
 
     private void FixedUpdate() 
@@ -71,6 +91,11 @@ public class MushroomMovement : MonoBehaviour
     {
         float distance = Vector3.Distance(destinationPos,rb.position);
         return distance <= checkDistance;
+    }
+
+    private void TurnMovementOff()
+    {
+        movementStop = true;
     }
 
     public bool GetMoveStatus()
