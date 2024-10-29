@@ -29,10 +29,12 @@ public class ShowGameStatusText : MonoBehaviour
     private void OnEnable() 
     {
         MushroomHealth.onMushroomDeath += ShowLoseText;
+        MushroomDetector.onMushroomEnterWinZone += ShowWinText;
     }
     private void OnDisable() 
     {
         MushroomHealth.onMushroomDeath -= ShowLoseText;
+        MushroomDetector.onMushroomEnterWinZone -= ShowWinText;
     }
 
 
